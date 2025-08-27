@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Gilda+Display&family=Jost:ital,wght@0,100..900;1,100..900&family=Playwrite+HU:wght@100..400&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Playwrite+HU:wght@100..400&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+      body {
+        font-family: "Jost", sans-serif;
+        color: #74716c;
+      }
+      .jost {
+        font-family: "Jost", sans-serif;
+      }
+      .more {
+        width: 10rem;
+        height: auto;
+        background-color: rgb(255, 255, 255);
+        padding: 2rem;
+        display: none;
+        text-align: center;
+        transition: 4s;
+        border-radius: 10px;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.674);
+        z-index: 4;
+      }
+      .home:hover .more {
+        display: grid;
+      }
+      .glida {
+        font-family: "Gilda Display", serif;
+      }
+      .swiper {
+        width: 100%;
+        font-family: "Gilda Display", serif;
+      }
+
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #444;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      #mobile-menu {
+        transition: 5s;
+      }
+
+      .hide-scroll-bar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.hide-scroll-bar::-webkit-scrollbar {
+  display: none;
+}
+    </style>
+  </head>
+  <body>
+    <div
+      class="hidden lg:flex lg:justify-around w-full border-b-1 p-[1rem] text-[#74716c] text-sm"
+    >
+      <div class="flex gap-10">
+        <div><i class="fa-solid fa-phone"></i> +12505550199</div>
+        <div><i class="fa-solid fa-envelope"></i> moonlit@gmail.com</div>
+      </div>
+      <div>
+        <i class="fa-solid fa-location-dot"></i> 280 Augusta Avenue, M5T 2L9
+        Toronto, Canada
+      </div>
+    </div>
+    <!-- navbar-laptop -->
+    <nav class="hidden sticky top-0 z-10 bg-red-50 lg:flex justify-around p-5">
+      <div>
+        <ul class="flex gap-4">
+          <li class="relative home">
+            <span
+              >Home<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16px"
+                height="16px"
+                class="ml-1 inline-block"
+                viewBox="0 0 23 23"
+              >
+                <path
+                  d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                  data-name="16"
+                  data-original="#000000"
+                />
+              </svg>
+            </span>
+            <div class="more absolute">
+              <ul>
+                <li>j</li>
+                <li>g</li>
+                <li>g</li>
+                <li>g</li>
+                <li>g</li>
+              </ul>
+            </div>
+          </li>
+          <li class="home">
+            <span
+              >Rooms<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16px"
+                height="16px"
+                class="ml-1 inline-block"
+                viewBox="0 0 23 23"
+              >
+                <path
+                  d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                  data-name="16"
+                  data-original="#000000"
+                />
+              </svg>
+            </span>
+            <div class="more absolute">
+              <ul>
+                <li>j</li>
+                <li>g</li>
+                <li>g</li>
+                <li>g</li>
+                <li>g</li>
+              </ul>
+            </div>
+          </li>
+          <li class="home">
+            Pages<svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16px"
+              height="16px"
+              class="ml-1 inline-block"
+              viewBox="0 0 23 23"
+            >
+              <path
+                d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                data-name="16"
+                data-original="#000000"
+              />
+            </svg>
+            <div class="more absolute">
+              <ul>
+                <li>j</li>
+                <li>g</li>
+                <li>g</li>
+                <li>g</li>
+                <li>g</li>
+              </ul>
+            </div>
+          </li>
+          <li><a href="">Conntacts</a></li>
+        </ul>
+      </div>
+      <div>
+        <img src="./images/logo.svg" alt="" />
+      </div>
+      <div class="flex gap-10">
+        <button
+          class="rounded-lg border-1 border-[#74716cd1] w-[5rem] p-2 text-[#ab8a62] hover:bg-[#ab8a62] hover:text-red-50 cursor-pointer"
+        >
+          Sign In
+        </button>
+        <button
+          class="rounded-lg border-1 border-[#74716cd1] w-[5rem] p-2 text-[#ab8a62] hover:bg-[#ab8a62] hover:text-red-50 cursor-pointer"
+        >
+          Sign Up
+        </button>
+        <button
+          class="rounded-lg border-1 border-[#74716cd1] w-[6rem] bg-[#ab8a62] text-red-50 p-2 hover:bg-red-50 hover:text-[#ab8a62] cursor-pointer"
+        >
+          Book Now
+        </button>
+      </div>
+    </nav>
+
+    <nav class="flex lg:hidden justify-between p-5">
+      <div><img src="./images/logo.svg" alt="" /></div>
+      <div class="flex gap-4 items-center">
+        <button
+          class="hidden sm:inline rounded-lg border-1 border-[#74716cd1] w-[7rem] p-1 px-2 text-[#ab8a62] hover:bg-[#ab8a62] hover:text-red-50 cursor-pointer"
+        >
+          Book Now
+        </button>
+        <button
+          id="mobile-menu-btn"
+          class="rounded-lg border-1 border-[#74716cd1] w-[3rem] h-[3rem] flex items-center justify-center text-red-50 bg-[#ab8a62] hover:text-[#74716cd1] cursor-pointer focus:outline-none"
+          aria-label="Open menu"
+        >
+          <i class="fa-solid fa-bars text-xl"></i>
+        </button>
+      </div>
+    </nav>
+    <!-- Mobile Hamburger Menu -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-3 bg-black/60 flex justify-start lg:hidden hidden"
+    >
+      <div
+        class="text-red-50 w-2/3 max-w-xs h-full p-6 flex flex-col gap-6 shadow-lg bg-stone-950"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <span class="font-bold text-lg"
+            ><img src="./images/logo__two.svg" alt=""
+          /></span>
+          <button
+            id="mobile-menu-close"
+            class="text-2xl text-gray-600 hover:text-red-500 focus:outline-none"
+            aria-label="Close menu"
+          >
+            &times;
+          </button>
+        </div>
+        <ul class="flex flex-col gap-4 text-[#74716c] text-base">
+          <li><a href="#" class="hover:text-[#ab8a62]">Home</a></li>
+          <li><a href="#" class="hover:text-[#ab8a62]">Rooms</a></li>
+          <li><a href="#" class="hover:text-[#ab8a62]">Pages</a></li>
+          <li><a href="#" class="hover:text-[#ab8a62]">Contacts</a></li>
+        </ul>
+        <div class="mt-auto flex flex-col gap-2">
+          <button
+            class="rounded-lg border-1 border-[#74716cd1] w-full p-2 text-[#ab8a62] hover:bg-[#ab8a62] hover:text-red-50 cursor-pointer"
+          >
+            Sign In
+          </button>
+          <button
+            class="rounded-lg border-1 border-[#74716cd1] w-full p-2 text-[#ab8a62] hover:bg-[#ab8a62] hover:text-red-50 cursor-pointer"
+          >
+            Sign Up
+          </button>
+          <button
+            class="rounded-lg border-1 border-[#74716cd1] w-full bg-[#ab8a62] text-red-50 p-2 hover:bg-red-50 hover:text-[#ab8a62] cursor-pointer"
+          >
+            Book Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- slider -->
+    <div class="swiper mySwiper h-[70vh] lg:h-[80vh]">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide relative">
+          <img src="./images/ban1.webp" alt="" />
+          <div
+            class="absolute h-full w-full bg-stone-900/50 flex justify-center pt-30 lg:p-30"
+          >
+            <div class="text-red-50">
+              <p class="text-[15px] lg:text-2xl font-light">
+                Welcome To Our Spa
+              </p>
+              <h1 class="text-[30px] lg:text-[60px] glida font-semibold">
+                Lavish Getaway A Blend of Comfort & Style
+              </h1>
+              <p class="jost text-[15px] lg:text-[20px] mt-3">
+                Choosing Bokinn was one of the best decisions we've ever made.
+                They<br />
+                have proven to be a reliable and innovative partner
+              </p>
+              <button
+                class="rounded-lg border-1 border-[#74716cd1] w-[10rem] bg-[#ab8a62] text-red-50 p-2 hover:bg-red-50 hover:text-[#ab8a62] cursor-pointer jost mt-10"
+              >
+                Discover Room
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/ban2.webp" alt="" />
+          <div
+            class="absolute h-full w-full bg-stone-900/50 flex justify-center pt-30 lg:p-30"
+          >
+            <div class="text-red-50">
+              <p class="text-[15px] lg:text-2xl font-light">
+                Welcome To Our Spa
+              </p>
+              <h1 class="text-[30px] lg:text-[60px] glida font-semibold">
+                Lavish Getaway A Blend of Comfort & Style
+              </h1>
+              <p class="jost text-[15px] lg:text-[20px] mt-3">
+                Choosing Bokinn was one of the best decisions we've ever made.
+                They<br />
+                have proven to be a reliable and innovative partner
+              </p>
+              <button
+                class="rounded-lg border-1 border-[#74716cd1] w-[10rem] bg-[#ab8a62] text-red-50 p-2 hover:bg-red-50 hover:text-[#ab8a62] cursor-pointer jost mt-10"
+              >
+                Discover Room
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:block">
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+    <!-- check box -->
+    <div class="w-full flex flex-wrap justify-center absolute z-2 mt-[-4rem]">
+      <div
+        class="w-[80vw] bg-red-50 p-2 flex flex-wrap justify-around rounded-xl shadow-xl/30 glida"
+      >
+        <div class="p-4">
+          <p class="text-stone-900 text-2xl">Check In</p>
+          <input type="date" />
+        </div>
+        <div class="p-4">
+          <p class="text-stone-900 text-2xl">Check Out</p>
+          <input type="date" placeholder="hello" />
+        </div>
+        <div class="p-4">
+          <p class="text-stone-900 text-2xl">Adult</p>
+          <select name="option" id="optiopns" class="w-[100px]">
+            <option value="name">hello</option>
+            <option value="name">hello</option>
+            <option value="name">hello</option>
+          </select>
+        </div>
+        <div class="p-4">
+          <p class="text-stone-900 text-2xl">Child</p>
+          <select name="option" id="optiopns" class="w-[100px]">
+            <option value="name">hello</option>
+            <option value="name">hello</option>
+            <option value="name">hello</option>
+          </select>
+        </div>
+        <div class="p-4">
+          <button
+            class="rounded-lg border-1 border-[#74716cd1] w-[10rem] bg-[#ab8a62] text-red-50 p-4 hover:bg-red-50 hover:text-[#ab8a62] cursor-pointer"
+          >
+            Check Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="flex gap-[1rem] xl:gap-[8rem] mt-[30rem] md:mt-[10rem] xl:mt-[8rem] mx-full xl:mx-[15rem]"
+    >
+      <div>
+        <div
+          class="h-[35rem] w-[30rem] rounded-xl relative bg-[url(./images/about-1.webp)] bg-fixed hidden 2xl:block"
+        >
+          <img
+            src="./images/about-main.webp"
+            class="absolute top-[-2rem] right-[-4rem] h-[14rem] border-8 border-stone-50 rounded-2xl hidden 2xl:block"
+          />
+          <div
+            class="flex absolute bottom-[4rem] left-[-7rem] h-[8rem] p-3 w-[15rem] rounded-2xl shadow-xl/80 bg-red-50 justify-around items-center hidden 2xl:block"
+          >
+            <div><i class="fa-solid fa-people-group fa-2x"></i></div>
+            <div>
+              <h1
+                class="text-5xl glida font-medium text-[black] hidden 2xl:block"
+              >
+                50+
+              </h1>
+              <p>Experience Staff</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <p class="glida text-[#AB8A62] text-3xl">About Us</p>
+        <h1 class="text-[black] glida text-[2rem] xl:text-[4rem]">
+          Welcome To Our Moonlit Hotel & Resort
+        </h1>
+        <p class="text-[1rem]">
+          Welcome to Bokinn, where luxury meets comfort in the heart of canada.
+          Since 1999, we have been dedicated to providing an exceptional stay
+          for our guests, blending modern amenities with timeless elegance.Our
+          beautifully designed rooms and suites offer stunning views and plush
+          accommodations, ensuring a restful retreat whether you're here for
+          business or leisure.
+        </p>
+        <button
+          class="rounded-lg border-1 border-[#74716cd1] w-[10rem] bg-[#ab8a62] text-red-50 p-2 hover:bg-red-50 hover:text-[#ab8a62] cursor-pointer jost mt-10"
+        >
+          Learn More
+        </button>
+      </div>
+    </div>
+
+    <div class="bg-stone-200 mt-[10rem] p-9 text-center">
+      <p class="glida text-[#AB8A62] text-3xl">Facilities</p>
+      <h1 class="text-[black] glida text-[2rem] xl:text-[4rem]">
+        Hotel Facilities
+      </h1>
+      <div class="flex flex-wrap justify-around mt-9 gap-5">
+        <div class="w-[20rem] bg-red-50 p-10 rounded-xl">
+          <div class="text-[#AB8A62] text-2xl">
+            <i class="fa-solid fa-house fa-2x"></i>
+          </div>
+          <h1 class="text-[1rem] xl:text-[1.5rem] text-[black] my-[2rem]">
+            Rooms and Suites
+          </h1>
+          <p>
+            Varied types of rooms, from standard to luxury suites, equipped with
+            essentials like beds.
+          </p>
+        </div>
+        <div class="w-[20rem] bg-red-50 p-10 rounded-xl">
+          <div class="text-[#AB8A62] text-2xl">
+            <i class="fa-solid fa-clock fa-2x"></i>
+          </div>
+          <h1 class="text-[1rem] xl:text-[1.5rem] text-[black] my-[2rem]">
+            23-Hour Security
+          </h1>
+          <p>
+            On-site security personnel and best surveillance. from standard to
+            luxury suites,Secure storage for valuables.
+          </p>
+        </div>
+        <div class="w-[20rem] bg-red-50 p-10 rounded-xl">
+          <div class="text-[#AB8A62] text-2xl">
+            <i class="fa-solid fa-dumbbell fa-2x"></i>
+          </div>
+          <h1 class="text-[1rem] xl:text-[1.5rem] text-[black] my-[2rem]">
+            Fitness Center
+          </h1>
+          <p>
+            Equipped with exercise machines and weights.Offering massages,
+            facials, and other treatments.
+          </p>
+        </div>
+        <div class="w-[20rem] bg-red-50 p-10 rounded-xl">
+          <div class="text-[#AB8A62] text-2xl">
+            <i class="fa-solid fa-person-swimming fa-2x"></i>
+          </div>
+          <h1 class="text-[1rem] xl:text-[1.5rem] text-[black] my-[2rem]">
+            Swimming Pool
+          </h1>
+          <p>
+            Indoor or outdoor pools for leisure or exercise.Offering massages,
+            facials, and other treatments
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-3">
+      <div class="block xl:flex justify-center px-[5rem] gap-10 items-center">
+        <div>
+          <p class="glida text-[#AB8A62] text-3xl w-[20vw]">Room</p>
+          <h1 class="text-[black] glida text-[2rem] xl:text-[4rem]">
+            Our Rooms
+          </h1>
+        </div>
+        <p class="w-[70vw]">
+          Our rooms offer a harmonious blend of comfort and elegance, designed
+          to provide an exceptional stay for every guest. Each room features
+          plush bedding, high-quality linens, and a selection of pillows to
+          ensure a restful night's sleep.
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-4 justify-around mt-[2rem]">
+        <div
+          class="h-[40rem] w-[23rem] bg-[url(./images/about-1.webp)] bg-size-[43rem] bg-fixed rounded-xl bg-cover relative"
+        >
+          <p
+            class="text-[white] text-[2.3rem] flex justify-around items-center glida h-full w-full bg-stone-800/30"
+          >
+            The Ritz-cartlon <br />
+            <span class="">100$</span>
+          </p>
+        </div>
+        <div
+          class="h-[40rem] w-[23rem] bg-[url(./images/one.webp)] bg-contain bg-fixed rounded-xl bg-no-repeat"
+        >
+          <p
+            class="text-[white] text-[2.3rem] flex justify-around items-center glida h-full w-full bg-stone-800/30"
+          >
+            The Ritz-cartlon <br />
+            <span class="">100$</span>
+          </p>
+        </div>
+        <div
+          class="h-[40rem] w-[23rem] bg-[url(./images/two.webp)] bg-size-[43rem] bg-fixed rounded-xl"
+        >
+          <p
+            class="text-[white] text-[2.3rem] flex justify-around items-center glida h-full w-full bg-stone-800/30"
+          >
+            The Ritz-cartlon <br />
+            <span class="">100$</span>
+          </p>
+        </div>
+        <div
+          class="h-[40rem] w-[23rem] bg-[url(./images/three.webp)] bg-size-[43rem] bg-fixed rounded-xl"
+        >
+          <p
+            class="text-[white] text-[2.3rem] flex justify-around items-center glida h-full w-full bg-stone-800/30"
+          >
+            The Ritz-cartlon <br />
+            <span class="">100$</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-[2rem] xl:p-[9rem]">
+      <div>
+        <p class="glida text-[#AB8A62] text-3xl">Testimonials</p>
+        <h1 class="text-[2rem] xl:text-6xl text-[black] glida my-[2rem]">
+          What Our Client Say
+        </h1>
+      </div>
+
+      <div class="block xl:flex justify-center gap-4 items-center">
+        <img src="./images/author-4.webp" class="rounded-[50%] h-[20rem]" />
+        <div class="p-2">
+          <span
+            ><i class="fa-solid fa-star" style="color: #ffd43b"></i
+            ><i class="fa-solid fa-star" style="color: #ffd43b"></i
+            ><i class="fa-solid fa-star" style="color: #ffd43b"></i
+            ><i class="fa-solid fa-star" style="color: #ffd43b"></i
+            ><i class="fa-solid fa-star" style="color: #ffd43b"></i
+          ></span>
+          <p class="text-[2rem]">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum
+            magni delectus, unde aut odit ea sit at, labore, laboriosam maxime
+            dolorem enim a eos! Nostrum ab beatae consequuntur temporibus
+            debitis.
+          </p>
+          <p class="text-[1.5rem] mt-4 glida text-[black]">sarah matiz</p>
+          <p>coo of apex solutions</p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="h-[40rem] bg-[url(./images/video-main.webp)] w-full bg-no-repeat bg-cover relative flex justify-center items-center bg-fixed"
+    >
+      <div
+        class="bg-[#ab8a62ad] h-[10rem] w-[10rem] p-4 rounded-[50%] flex justify-center items-center border-[white] border-1"
+      >
+        <i class="fa-solid fa-play fa-2x" style="color: #ffffff"></i>
+      </div>
+    </div>
+
+    <div class="w-full text-center mt-[8rem]">
+      <div>
+        <p class="glida text-[#AB8A62] text-3xl text-center">Special Offer</p>
+        <h1 class="text-[2rem] xl:text-[4rem] text-[black] glida">
+          Special Offer
+        </h1>
+      </div>
+      <div class="flex justify-center h flex-wrap gap-5">
+        <div class="w-[30rem]">
+          <img src="./images/5.webp" class="" />
+          <div class="h-[30vh] p-2 bg-[black] ">
+            <h1 class="text-[2rem] xl:text-[3rem] text-[white] glida">
+              Family Package
+            </h1>
+            <div class="flex gap-8 justify-center block">
+              <p>
+                <i class="fa-solid fa-circle-check"></i> 15% off on family
+                suites
+              </p>
+              <p>
+                <i class="fa-solid fa-circle-check"></i> Complimentary tickets
+              </p>
+              <p>
+                <i class="fa-solid fa-circle-check"></i> Free meals for kids
+                under 12
+              </p>
+              <p>
+                <i class="fa-solid fa-circle-check"></i> The local amusement
+                park
+              </p>
+            </div>
+            <h1 class="glida text-[#AB8A62] text-6xl text-center mt-4 glida">
+              $39.00
+            </h1>
+          </div>
+        </div>
+        <div class="mt-[2rem] w-[30rem]">
+          <div class="flex flex-wrap">
+            <img src="./images/6.webp" class="" />
+            <div class="p-2 bg-[black]">
+              <h1 class="text-[2rem] xl:text-[3rem] text-[white] glida">
+                Family Package
+              </h1>
+              <div class="flex gap-8 justify-center block">
+                <p>
+                  <i class="fa-solid fa-circle-check"></i> 15% off on family
+                  suites
+                </p>
+                <p>
+                  <i class="fa-solid fa-circle-check"></i> Complimentary tickets
+                </p>
+                <p>
+                  <i class="fa-solid fa-circle-check"></i> Free meals for kids
+                  under 12
+                </p>
+                <p>
+                  <i class="fa-solid fa-circle-check"></i> The local amusement
+                  park
+                </p>
+              </div>
+              <h1 class="glida text-[#AB8A62] text-6xl text-center mt-4 glida">
+                $39.00
+              </h1>
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center mt-[10rem]">
+      <p class="text-[2rem] xl:text-[2rem] text-[#AB8A62] glida">Instagram Posts</p>
+      <h1 class="text-[2rem] xl:text-[3rem] text-[black] glida">
+        Follow Instagram Posts
+      </h1>
+
+      <div>
+       <div class="flex flex-col bg-white mt-4 p-auto">
+
+      <div
+        class="flex overflow-x-scroll pb-10 hide-scroll-bar"
+      >
+        <div
+          class="flex flex-nowrap lg:ml-40 md:ml-20 ml-10 "
+        >
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            ><img src="./images/about-1.webp" class="h-full w-full"></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            ><img src="./images/about-main.webp" class="h-full w-full"></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            ><img src="./images/ban2.webp" class="h-full w-full"></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            ><img src="./images/three.webp" class="h-full w-full"></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            ><img src="./images/two.webp" class="h-full w-full"></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            ><img src="./images//video-main.webp" class="h-full w-full"></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            ><img src="./images/about-1.webp" class="h-full w-full"></div>
+          </div>
+          <div class="inline-block px-3">
+            <div
+              class="w-64 h-64 max-w-xs overflow-hidden rounded-lg shadow-md bg-white hover:shadow-xl transition-shadow duration-300 ease-in-out"
+            ><img src="./images/about-main.webp" class="h-full w-full"></div>
+          </div>
+        </div>
+      </div>
+</div>
+    </div>
+
+    <!-- ...existing code... -->
+
+<footer class="bg-stone-950 text-red-50 pt-12 pb-6 mt-16">
+  <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between gap-10">
+    <!-- Logo & Description -->
+    <div class="mb-8 md:mb-0 md:w-1/3">
+      <img src="./images/logo__two.svg" alt="Moonlit Hotel Logo" class="h-12 mb-4">
+      <p class="text-sm text-[#b8b6b2]">
+        Moonlit Hotel & Resort<br>
+        Where luxury meets comfort in the heart of Canada. Since 1999, dedicated to exceptional stays.
+      </p>
+      <div class="flex gap-4 mt-4">
+        <a href="#" aria-label="Instagram" class="hover:text-[#ab8a62]"><i class="fab fa-instagram fa-lg"></i></a>
+        <a href="#" aria-label="Facebook" class="hover:text-[#ab8a62]"><i class="fab fa-facebook fa-lg"></i></a>
+        <a href="#" aria-label="Twitter" class="hover:text-[#ab8a62]"><i class="fab fa-twitter fa-lg"></i></a>
+      </div>
+    </div>
+    <!-- Quick Links -->
+    <div class="mb-8 md:mb-0 md:w-1/3">
+      <h3 class="glida text-xl mb-4 text-[#ab8a62]">Quick Links</h3>
+      <ul class="space-y-2 text-sm">
+        <li><a href="#" class="hover:text-[#ab8a62]">Home</a></li>
+        <li><a href="#" class="hover:text-[#ab8a62]">Rooms</a></li>
+        <li><a href="#" class="hover:text-[#ab8a62]">Facilities</a></li>
+        <li><a href="#" class="hover:text-[#ab8a62]">Special Offers</a></li>
+        <li><a href="#" class="hover:text-[#ab8a62]">Contact</a></li>
+      </ul>
+    </div>
+    <!-- Contact Info -->
+    <div class="md:w-1/3">
+      <h3 class="glida text-xl mb-4 text-[#ab8a62]">Contact Us</h3>
+      <ul class="space-y-2 text-sm">
+        <li><i class="fa-solid fa-phone mr-2"></i> +1 250 555 0199</li>
+        <li><i class="fa-solid fa-envelope mr-2"></i> moonlit@gmail.com</li>
+        <li><i class="fa-solid fa-location-dot mr-2"></i> 280 Augusta Avenue, M5T 2L9 Toronto, Canada</li>
+      </ul>
+    </div>
+  </div>
+  <div class="border-t border-stone-800 mt-8 pt-4 text-center text-xs text-[#b8b6b2]">
+    &copy; 2025 Moonlit Hotel & Resort. All rights reserved.
+  </div>
+</footer>
+<!-- ...existing code... -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      // Hamburger menu toggle
+      const menuBtn = document.getElementById("mobile-menu-btn");
+      const menu = document.getElementById("mobile-menu");
+      const menuClose = document.getElementById("mobile-menu-close");
+      if (menuBtn && menu && menuClose) {
+        menuBtn.addEventListener("click", () => {
+          menu.classList.remove("hidden");
+        });
+        menuClose.addEventListener("click", () => {
+          menu.classList.add("hidden");
+        });
+        // Hide menu when clicking a link
+        menu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => menu.classList.add("hidden"));
+        });
+        // Hide menu when clicking outside
+        menu.addEventListener("click", (e) => {
+          if (e.target === menu) menu.classList.add("hidden");
+        });
+      }
+      // Swiper
+      var swiper = new Swiper(".mySwiper", {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+  </body>
+</html>
